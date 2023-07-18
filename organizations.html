@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Organizations</title>
+</head>
+<body>
+    <h1>Organizations</h1>
+    {% if organizations %}
+        <ul>
+        {% for organization in organizations %}
+            <li>
+                <h2>{{ organization.name }}</h2>
+                <p><strong>Description:</strong> {{ organization.description }}</p>
+                <p><strong>Rank:</strong> {{ organization.rank }}</p>
+                <p><strong>Locations:</strong> {{ organization.locations|join(', ') }}</p>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No organizations found for the given name.</p>
+    {% endif %}
+</body>
+</html>
